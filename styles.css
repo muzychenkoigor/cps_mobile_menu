@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("fonts/TTLakes-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("fonts/TTLakes-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("fonts/TTLakes-ExtraBold.woff") format("woff");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  width: 320px;
+  margin-left: 24px;
+  box-shadow: 25px 0 40px -40px black;
+}
+
+.header,
+.footerButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu__item:hover{
+  text-decoration: underline;
+  background-color: aliceblue;
+  font-size: 16px;
+  transition-duration: 0.15s;
+  cursor: pointer;
+}
+
+.menu__item_active::before {
+  position: absolute;
+  left: -24px;
+  top: 114px;
+  content: url("assets/images/highlight.svg");
+}
+
+.header__button:hover,
+.footerButtons__button:hover {
+  transition-duration: 0.4s;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.header__mainPage:hover {
+  opacity: 100%;
+}
+
+.header {
+  margin-top: 18px;
+}
+
+.header__mainPage {
+  margin-right: 78px;
+}
+
+.header__hide {
+  margin-right: 16px;
+  padding: 0;
+}
+
+.header__button,
+.footerButtons__button,
+.footer__lang__button {
+  background-color: inherit;
+  border: none;
+}
+
+.menu__list {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 48px;
+  padding-left: 0;
+}
+
+.menu__item {
+  list-style: none;
+  line-height: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 200px;
+}
+
+.footerButtons {
+  margin-top: 256px;
+  margin-bottom: 16px;
+}
+
+.footerButtons__button {
+  margin-right: 16px;
+  padding: 0;
+}
+
+.footer__mail {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.footer__phoneNumber {
+  font-family: "TTLakes", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.footer__lang__button {
+  font-family: "TTLakes", sans-serif;
+  font-weight: normal;
+  padding: 0;
+  margin-bottom: 32px;
+  margin-top: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer__mail:hover,
+.footer__phoneNumber:hover {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__lang__button:hover {
+  background-color: #f5f0f0;
+  cursor: pointer;
+}
