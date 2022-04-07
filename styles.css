@@ -1,25 +1,22 @@
 @font-face {
-  font-family: "TTLakes", sans-serif;
+  font-family: 'TTLakes Medium';
   font-style: normal;
   font-weight: normal;
+  src: local('TTLakes-Medium'),
+  url('/fonts/TTLakes-Medium.woff') format('woff'),
+  url('/fonts/TTLakes-Medium.ttf') format('ttf'),
+  url('/fonts/TTLakes-Medium.eot') format('eot');
   font-display: swap;
-  src: url("fonts/TTLakes-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "TTLakes", sans-serif;
+  font-family: 'TTLakes Bold';
   font-style: normal;
   font-weight: bold;
+  src: local('TTLakes-Bold'),
+  url('/fonts/TTLakes-Bold.woff') format('woff'),
+  url('/fonts/TTLakes-Bold.eot') format('eot');
   font-display: swap;
-  src: url("fonts/TTLakes-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "TTLakes", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url("fonts/TTLakes-ExtraBold.woff") format("woff");
 }
 
 html {
@@ -27,11 +24,15 @@ html {
 }
 
 body {
+  font-family: 'TTLakes Medium', sans-serif;
   margin: 0;
+  min-height: 663px;
 }
 
 .container {
   position: absolute;
+  height: 100%;
+  min-height: 662px;
   left: 0;
   width: 320px;
   margin-left: 24px;
@@ -39,15 +40,21 @@ body {
 }
 
 .header,
-.footerButtons {
+.footer-Buttons {
   display: flex;
   flex-direction: row;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5px;
+}
+
 .menu__item:hover{
-  text-decoration: underline;
-  background-color: aliceblue;
-  font-size: 16px;
+  background-color: lightslategray;
+  transform: scale(1.04);
   transition-duration: 0.15s;
   cursor: pointer;
 }
@@ -59,22 +66,24 @@ body {
   content: url("assets/images/highlight.svg");
 }
 
-.header__button:hover,
-.footerButtons__button:hover {
-  transition-duration: 0.4s;
-  opacity: 50%;
-  cursor: pointer;
+.menu__item_active {
+  font-family: 'TTLakes Medium', sans-serif;
+  color: #7E7E82;
 }
 
-.header__mainPage:hover {
-  opacity: 100%;
+.header__button:hover,
+.footer-Buttons__button:hover {
+  transform: scale(1.04);
+  transition-duration: 0.4s;
+  opacity: 60%;
+  cursor: pointer;
 }
 
 .header {
   margin-top: 18px;
 }
 
-.header__mainPage {
+.header__main-Page {
   margin-right: 78px;
 }
 
@@ -84,7 +93,7 @@ body {
 }
 
 .header__button,
-.footerButtons__button,
+.footer-Buttons__button,
 .footer__lang__button {
   background-color: inherit;
   border: none;
@@ -106,33 +115,42 @@ body {
   width: 200px;
 }
 
-.footerButtons {
-  margin-top: 256px;
+.menu__item a{
+  text-decoration: none;
+  color: black;
+}
+
+.menu__item a:hover{
+  color: white;
+}
+
+.footer-Buttons {
+  margin-top: auto;
   margin-bottom: 16px;
 }
 
-.footerButtons__button {
+.footer-Buttons__button {
   margin-right: 16px;
   padding: 0;
 }
 
 .footer__mail {
-  font-family: "TTLakes", sans-serif;
-  font-style: normal;
-  font-weight: bold;
+  font-family: "TTLakes Medium", sans-serif;
   padding: 0;
   margin-bottom: 12px;
   margin-top: 0;
+  text-decoration: none;
+  color: black;
 }
 
-.footer__phoneNumber {
-  font-family: "TTLakes", sans-serif;
-  font-style: normal;
-  font-weight: bold;
+.footer__phone-Number {
+  font-family: "TTLakes Bold", sans-serif;
   font-size: 24px;
   padding: 0;
   margin-bottom: 0;
   margin-top: 0;
+  text-decoration: none;
+  color: black;
 }
 
 .footer__lang__button {
@@ -146,13 +164,17 @@ body {
 }
 
 .footer__mail:hover,
-.footer__phoneNumber:hover {
-  color: blue;
-  text-decoration: underline;
+.footer__phone-Number:hover {
+  background-color: #499ce1;
+  color: white;
   cursor: pointer;
 }
 
 .footer__lang__button:hover {
   background-color: #f5f0f0;
   cursor: pointer;
+}
+
+.footer__lang__button_active {
+  color: #7E7E82;
 }
